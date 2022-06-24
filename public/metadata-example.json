@@ -1,0 +1,22 @@
+{
+  "decimals": 0,
+  "isBooleanAmount": true,
+  "name": "Token1",
+  "description": "",
+  "tags": [
+    "awesome",
+    "nft"
+  ],
+  "minter": "tz1YPSCGWXwBdTncK2aCctSZAXWvGsGwVJqU",
+  "artifactUri": "ipfs://QmRyTc9KbD7ZSkmEf4e7fk6A44RPciW5pM4iyqRGrhbyvj",
+  "displayUri": "ipfs://QmRyTc9KbD7ZSkmEf4e7fk6A44RPciW5pM4iyqRGrhbyvj",
+  "thumbnailUri": "ipfs://QmRyTc9KbD7ZSkmEf4e7fk6A44RPciW5pM4iyqRGrhbyvj",
+  "creators": [],
+  "rights": "",
+  "attributes": [
+    {
+      "name": "sample attribute",
+      "value": "sample value"
+    }
+  ]
+}
