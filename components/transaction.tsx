@@ -18,7 +18,7 @@ export default function Transaction({
   action
 }: TransactionProps) {
   return (
-    <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
+    <div className="fixed inset-0 z-10 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
       <div className="flex min-h-screen items-center justify-center">
 
         <div className="flex flex-col border border-gray-600 items-center rounded-xl p-4 bg-slate-50 max-w-md w-96 min-h-fit h-64 text-black text-sm">

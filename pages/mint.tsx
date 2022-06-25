@@ -90,7 +90,7 @@ export default function Mint() {
   return (
     <Layout>
       <Head>
-        <title>Mint Tokens</title>
+        <title>Mint NFT Tokens - creatMe</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="min-h-screen">
@@ -118,7 +118,7 @@ export default function Mint() {
         <main>
           <div className="antialiased text-gray-900 px-6">
             <div className="py-12 px-8">
-              <h2 className="text-2xl font-bold">Mint Tokens</h2>
+              <h2 className="text-2xl font-bold border-b border-gray-500 pb-2">Mint NFT Tokens</h2>
               <div className="grid sm:grid-cols-2 grid-cols-1 gap-16 py-4">
                 <div>
                   <Uploader

@@ -7,7 +7,7 @@ const Home: NextPage = () => {
   return (
     <Layout>
       <Head>
-        <title>CreatMe - Make your custom Tezos NFT Collection</title>
+        <title>creatMe - Make your custom Tezos NFT Collection</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="flex min-h-screen flex-col pt-40">

@@ -53,7 +53,7 @@ export default function TransferForm({
   return (
     <form onSubmit={handleOnSubmit}>
       <div className="grid grid-cols-1 gap-6">
-        <div className="grid grid-cols-1 gap-4 py-6 border-t border-gray-500">
+        <div className="grid grid-cols-1 gap-4 py-6">
           <div className="border-b">
             <span className="text-lg text text-gray-900 ml-4">Transfer Details</span>
           </div>

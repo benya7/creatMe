@@ -36,7 +36,7 @@ export default function MintForm({
           <div className="border-b">
             <span className="text-lg text text-gray-900 ml-4">Mint Details</span>
           </div>
-          
+
           <label className="block" htmlFor="collectionAddress">
             <span className="text-gray-700">Collection Contract Address</span>
             <input
@@ -66,17 +66,17 @@ export default function MintForm({
           <label className="block" htmlFor="multipleFile">
             <div className="flex flex-row gap-4">
 
-            <span className="text-gray-700">Metadata file items collections is mutliple?</span>
-            <input
-              type="checkbox"
-              id="multipleFile"
-              name="multipleFile"
-              checked={multipleFile}
-              onChange={() => setMultipleFile(!multipleFile)}
+              <span className="text-gray-700">Metadata file items collections is mutliple?</span>
+              <input
+                type="checkbox"
+                id="multipleFile"
+                name="multipleFile"
+                checked={multipleFile}
+                onChange={() => setMultipleFile(!multipleFile)}
                 className="mt-1 block rounded-full border-black border-2"
-              
+
               />
-              </div>
+            </div>
           </label>
           {
             multipleFile && (
@@ -95,7 +95,7 @@ export default function MintForm({
               </label>
             )
           }
-          
+
           {
             multipleFile && (
               <label className="block" htmlFor="patternName">
@@ -114,7 +114,7 @@ export default function MintForm({
             )
           }
         </div>
-        
+
         <button className="mt-2 px-4 py-2 border bg-emerald-300 rounded-xl hover:bg-emerald-500" type="submit">Submit</button>
       </div>
     </form>

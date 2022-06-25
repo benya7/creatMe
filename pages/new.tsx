@@ -89,7 +89,7 @@ export default function New() {
   return (
     <Layout>
       <Head>
-        <title>Create New Project</title>
+        <title>Create New Collection - creatMe</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="min-h-screen">
@@ -118,7 +118,7 @@ export default function New() {
         <main>
           <div className="antialiased text-gray-900 px-6">
             <div className="py-12 px-8">
-              <h2 className="text-2xl font-bold">Create New Art Project</h2>
+              <h2 className="text-2xl font-bold pb-2 border-b border-gray-500">Create New Art Project</h2>
               <div className="grid sm:grid-cols-2 grid-cols-1 gap-16 py-4">
                 <CollectionForm
                   handleOnSubmit={handleOnSubmit}

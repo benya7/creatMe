@@ -6,7 +6,7 @@ import readFile from '../../../lib/read-file';
 import initRoute from '../../../lib/init-route';
 import initTezosTK from '../../../lib/tezos/init-tezos-tk';
 import transferNft from '../../../lib/tezos/transfer-nft';
-import addTransfer from '../../../lib/tezos/add-transfer';
+import { addTransfer } from '@oxheadalpha/tznft/dist/contracts';
 
 
 interface ReqExtended extends NextApiRequest {
@@ -61,7 +61,7 @@ apiRoute.post(async (req: ReqExtended, res) => {
   let _transferBatch = transferBatch();
 
   if (withoutFile) {
-    
+
     destinations.map(destination => {
       let { to, tokenId } = destination;
       _transferBatch = addTransfer(`${from}, ${to}, ${tokenId}`, _transferBatch)

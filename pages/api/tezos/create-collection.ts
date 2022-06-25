@@ -2,27 +2,28 @@ import { NextApiResponse } from 'next/types';
 import initRoute from "../../../lib/init-route";
 import { createCollection } from '../../../lib/tezos/create-collection';
 import initTezosTK from '../../../lib/tezos/init-tezos-tk';
+import { CollectionMetadata } from '../../../lib/types';
 
-const tz = initTezosTK();
+const tz = initTezosTK(true);
 
-const metadataDefault =  {
-    name: "",
-    description: "",
-    homepage: '',
-    authors: [],
-    version: '1.0.0',
-    license: { name: 'MIT' },
-    interfaces: ['TZIP-016', 'TZIP-012', 'TZIP-021'],
-    source: {
-      tools: ['LIGO'],
-      location: ''
-    },
-    exhibition: {
-      date: "",
-      topic: "",
-      location: ""
-    }
-  };
+const metadataDefault: CollectionMetadata = {
+  name: "",
+  description: "",
+  homepage: '',
+  authors: [],
+  version: '1.0.0',
+  license: { name: 'MIT' },
+  interfaces: ['TZIP-016', 'TZIP-012', 'TZIP-021'],
+  source: {
+    tools: ['creatMe'],
+    location: 'https://github.com/enoc-026/creatMe'
+  },
+  exhibition: {
+    date: "",
+    topic: "",
+    location: ""
+  }
+};
 
 let apiRoute = initRoute((e, _, res) => {
   res.status(501).json(JSON.stringify(e))
@@ -56,15 +57,15 @@ apiRoute.post(async (req: RequestExtended, res) => {
     reqMetadata.homepage = `https://creatMe.io/collection/${reqMetadata.name}`
   }
 
-  const metadata = {
+  const metadata: CollectionMetadata = {
     ...metadataDefault,
     name: reqMetadata.name,
     description: reqMetadata.description,
     homepage: reqMetadata.homepage,
     authors: authors,
-    license: reqMetadata.license,
+    license: { name: reqMetadata.license},
     version: reqMetadata.version,
-    source: reqMetadata.homepage,
+    source: { location: reqMetadata.homepage},
     exhibition: {
       ...exhibition
     }

@@ -10,6 +10,7 @@
     "@pinata/sdk": "^1.1.26",
     "@taquito/signer": "^13.0.0",
     "@taquito/taquito": "^13.0.0",
+    "@taquito/tzip12": "^13.0.0",
     "@taquito/utils": "^13.0.0",
     "axios": "^0.27.2",
     "bignumber.js": "^9.0.2",

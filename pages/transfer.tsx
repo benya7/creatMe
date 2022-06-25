@@ -8,7 +8,7 @@ import Usage from "../components/usage";
 import axios, { AxiosRequestConfig } from "axios";
 import TransferForm from "../components/transfer-form";
 
-export default function Register() {
+export default function Transfer() {
   const [loadingTransaction, setLoadingTrasanction] = useState(false);
   const {
     isVisible: isVisibleModalTransaction,
@@ -73,7 +73,7 @@ export default function Register() {
   return (
     <Layout>
       <Head>
-        <title>Transfer Nfts</title>
+        <title>Transfer NFT Tokens - creatMe</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="min-h-screen">
@@ -101,7 +101,7 @@ export default function Register() {
         <main>
           <div className="antialiased text-gray-900 px-6">
             <div className="py-12 px-8">
-              <h2 className="text-2xl font-bold">Transfer Nft Items</h2>
+              <h2 className="text-2xl font-bold pb-2 border-b border-gray-500">Transfer NFT Tokens </h2>
               <div className="grid sm:grid-cols-2 grid-cols-1 gap-16 py-4">
                 <div>
                   <TransferForm

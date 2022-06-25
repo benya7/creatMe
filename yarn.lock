@@ -412,6 +412,15 @@
     "@taquito/taquito" "^12.1.1"
     "@taquito/tzip16" "^12.1.1"
 
+"@taquito/tzip12@^13.0.0":
+  version "13.0.0"
+  resolved "https://registry.yarnpkg.com/@taquito/tzip12/-/tzip12-13.0.0.tgz#2f09030d45489a93b295242b43868b3d419f882a"
+  integrity sha512-AVUbdVNB1Sez3iS+4JN/wXsxmGLfYPdbzT9Nbu5O0GdXi/B05hU6UlMTnu0NReN9a/eRdmYKXP1CBjUbGLgkSg==
+  dependencies:
+    "@taquito/michelson-encoder" "^13.0.0"
+    "@taquito/taquito" "^13.0.0"
+    "@taquito/tzip16" "^13.0.0"
+
 "@taquito/tzip16@^12.1.1":
   version "12.1.1"
   resolved "https://registry.yarnpkg.com/@taquito/tzip16/-/tzip16-12.1.1.tgz#8a1ed4396a50e5b46602528a8e9e04ed2a9cb836"
@@ -422,6 +431,19 @@
     "@taquito/rpc" "^12.1.1"
     "@taquito/taquito" "^12.1.1"
     "@taquito/utils" "^12.1.1"
+    bignumber.js "^9.0.2"
+    crypto-js "^4.1.1"
+
+"@taquito/tzip16@^13.0.0":
+  version "13.0.0"
+  resolved "https://registry.yarnpkg.com/@taquito/tzip16/-/tzip16-13.0.0.tgz#86c1cc66f26ee388d93e80bf8711cbcf9266e073"
+  integrity sha512-vcSKKYrJg/E6eM7UJ3aAKTVkEbb1R0jUl8CrLKtyGsePBDt4rBIMYJTvDNzJzNi69feUCfqj7gdgECy2aT4PNA==
+  dependencies:
+    "@taquito/http-utils" "^13.0.0"
+    "@taquito/michelson-encoder" "^13.0.0"
+    "@taquito/rpc" "^13.0.0"
+    "@taquito/taquito" "^13.0.0"
+    "@taquito/utils" "^13.0.0"
     bignumber.js "^9.0.2"
     crypto-js "^4.1.1"
 

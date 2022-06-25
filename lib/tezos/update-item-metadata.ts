@@ -1,6 +1,6 @@
-import { itemMetadata } from "../types";
+import { ItemMetadata } from "../types";
 
-export default function updateItemMetadata(cid: string, item: itemMetadata): string {
+export default function updateItemMetadata(cid: string, item: ItemMetadata): string {
   let uriParsed = `ipfs://${cid}`
 
   item.artifactUri = uriParsed;

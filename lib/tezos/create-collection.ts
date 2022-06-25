@@ -1,7 +1,7 @@
 import { TezosToolkit } from '@taquito/taquito';
 import path from 'path';
 import readFile from "../read-file"
-import { createNftStorage } from './create-nft-storage';
+import { createNftStorage } from '@oxheadalpha/tznft/dist/nft-util'
 import { originateContract } from '@oxheadalpha/tezos-tools';
 
 export async function createCollection(

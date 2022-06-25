@@ -1,4 +1,4 @@
-export interface itemMetadata {
+export interface ItemMetadata {
   decimals: number,
   isBooleanAmount: boolean,
   name: string,
@@ -14,4 +14,23 @@ export interface itemMetadata {
     name: string,
     value: string
   }[]
+};
+
+export interface CollectionMetadata {
+  name: string;
+  description?: string;
+  homepage?: string;
+  authors?: string[];
+  version?: string;
+  license?: { name?: string };
+  interfaces?: string[];
+  source?: {
+    tools?: string[];
+    location?: string;
+  },
+  exhibition?: {
+    date?: string;
+    topic?: string;
+    location?: string;
+  }
 }

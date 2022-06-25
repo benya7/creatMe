@@ -5,10 +5,10 @@ import readFile from '../../../lib/read-file';
 import sleep from '../../../lib/sleep';
 import initRoute from '../../../lib/init-route';
 import { pinFile } from '@oxheadalpha/tezos-tools'
-import parseTokens from "../../../lib/tezos/parse-tokens";
+import { parseTokens } from '@oxheadalpha/tznft/dist/contracts'
 import initTezosTK from '../../../lib/tezos/init-tezos-tk';
 import mintNft from '../../../lib/tezos/mint-nft';
-import { itemMetadata } from '../../../lib/types';
+import { ItemMetadata } from '../../../lib/types';
 import updateItemMetadata from '../../../lib/tezos/update-item-metadata';
 
 
@@ -49,7 +49,7 @@ apiRoute.post(async (req, res) => {
     patternName
   } = req.body
 
-  let fileMetadata: itemMetadata[] = [];
+  let fileMetadata: ItemMetadata[] = [];
 
   // Parse fileMetadata in a single object
   console.log("parsing metadata files...")
@@ -59,8 +59,8 @@ apiRoute.post(async (req, res) => {
         .catch(() => {
           throw new Error("INCONSISTENT_METADATA_FILES")
         })
-      let itemMetadata: itemMetadata = JSON.parse(jsonFile)
-      fileMetadata.push(itemMetadata)
+      let ItemMetadata: ItemMetadata = JSON.parse(jsonFile)
+      fileMetadata.push(ItemMetadata)
     }
   } else {
     let jsonFile = await readFile(`${UPLOADS_DIR}/metadata.json`)
@@ -68,7 +68,7 @@ apiRoute.post(async (req, res) => {
         throw new Error("JSON_METADATA_NOT_FOUND");
       })
 
-    let itemsMetadata: itemMetadata[] = JSON.parse(jsonFile)
+    let itemsMetadata: ItemMetadata[] = JSON.parse(jsonFile)
     fileMetadata = itemsMetadata;
 
   }
@@ -108,7 +108,7 @@ apiRoute.post(async (req, res) => {
     parsedTokens = parseTokens(token, parsedTokens);
   })
 
-  const tezos = initTezosTK();
+  const tezos = initTezosTK(true);
   await mintNft(tezos, collectionAddress, parsedTokens);
   console.log("all files were processed!");
 
