@@ -14,8 +14,7 @@ export async function createCollection(
   const { serverRuntimeConfig } = getConfig()
   const ownerAddress = await tz.signer.publicKeyHash();
 
-  const dir = path.resolve('./public');
-  const fullPath = path.join(dir, 'fa2_nft_asset.tz');
+  const fullPath = path.join(serverRuntimeConfig.PROJECT_ROOT, './public/fa2_nft_asset.tz');
   const code = await readFile(fullPath)
     .catch((e) => {
       console.error(e)

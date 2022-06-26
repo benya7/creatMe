@@ -3,5 +3,8 @@ module.exports = {
   reactStrictMode: true,
   images: {
     domains: ["ipfs.io"]
-  },
+  }, 
+  serverRuntimeConfig: {
+    PROJECT_ROOT: __dirname
+  }
 }
