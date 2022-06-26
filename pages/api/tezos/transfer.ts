@@ -42,7 +42,7 @@ let apiRoute = initRoute((error, _, res) => {
 
 })
 
-const UPLOADS_DIR = path.join(process.cwd(), "/public/uploads")
+const UPLOADS_DIR = path.join(process.cwd(), "uploads")
 
 
 apiRoute.post(async (req: ReqExtended, res) => {
@@ -54,7 +54,7 @@ apiRoute.post(async (req: ReqExtended, res) => {
     destinations
   } = req.body
 
-  const tezos = initTezosTK();
+  const tezos = initTezosTK(true);
 
 
 
@@ -70,28 +70,28 @@ apiRoute.post(async (req: ReqExtended, res) => {
 
   } else {
 
-    let fileJson = await readFile(`${UPLOADS_DIR}/transfers.json`)
-      .catch(() => {
-        throw new Error("INCONSISTENT_TRANSFERS_FILE")
-      })
-
-    let transfersFile: {
-      from: string;
-      to: string;
-      tokenId: number;
-    }[] = JSON.parse(fileJson);
-
-    transfersFile.map(transfer => {
-      _transferBatch = addTransfer(`${transfer.from}, ${transfer.to}, ${transfer.tokenId}`, _transferBatch)
-
+    let fileJson = await readFile(path.join(UPLOADS_DIR, 'transfers.json'))
+      .catch (() => {
+      throw new Error("INCONSISTENT_TRANSFERS_FILE")
     })
+
+let transfersFile: {
+  from: string;
+  to: string;
+  tokenId: number;
+}[] = JSON.parse(fileJson);
+
+transfersFile.map(transfer => {
+  _transferBatch = addTransfer(`${transfer.from}, ${transfer.to}, ${transfer.tokenId}`, _transferBatch)
+
+})
   }
 
-  await transferNft(tezos, collectionAddress, _transferBatch);
-  // console.log("all files were processed!");
+await transferNft(tezos, collectionAddress, _transferBatch);
+// console.log("all files were processed!");
 
 
-  res.status(200).json({ msg: "success" })
+res.status(200).json({ msg: "success" })
 })
 
 
