@@ -4,7 +4,7 @@ import { NextApiRequest, NextApiResponse } from 'next/types';
 
 const upload = multer({
   storage: multer.diskStorage({
-    destination: './',
+    destination: './json',
     filename: (req, file, cb) => cb(null, file.originalname),
   }),
 });

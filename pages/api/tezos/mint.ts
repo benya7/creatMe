@@ -34,7 +34,7 @@ let apiRoute = initRoute((error, _, res) => {
 
 })
 
-const UPLOADS_DIR = process.cwd();
+const UPLOADS_DIR = path.join(process.cwd(), 'json');
 
 
 apiRoute.post(async (req, res) => {
