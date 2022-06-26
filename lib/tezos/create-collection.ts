@@ -3,6 +3,7 @@ import path from 'path';
 import readFile from "../read-file"
 import { createNftStorage } from '@oxheadalpha/tznft/dist/nft-util'
 import { originateContract } from '@oxheadalpha/tezos-tools';
+import throwError from '../throw-error';
 
 export async function createCollection(
   tz: TezosToolkit,
@@ -12,13 +13,18 @@ export async function createCollection(
   const ownerAddress = await tz.signer.publicKeyHash();
   const code = await readFile(path.join(process.cwd(), 'lib/tezos/fa2_nft_asset.tz'))
     .catch((e) => {
-      throw new Error("FAILED_CONTRACT_FILE_READ");
+      console.error(e)
+      throw new Error("FAILED_READ_CONTRACT_FILE");
     });
 
   const storage = createNftStorage(ownerAddress, metadata);
 
   console.log(('originating new NFT contract...'));
-  const contract = await originateContract(tz as any, code, storage, 'nft');
+  const contract = await originateContract(tz as any, code, storage, 'nft')
+    .catch((e) => {
+      console.error(e)
+      throw new Error("FAILED_DEPLOY_CONTRACT");
+    });
 
   return contract.address
 }
