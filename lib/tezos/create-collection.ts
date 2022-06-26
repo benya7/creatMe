@@ -4,14 +4,16 @@ import readFile from "../read-file"
 import { createNftStorage } from '@oxheadalpha/tznft/dist/nft-util'
 import { originateContract } from '@oxheadalpha/tezos-tools';
 import throwError from '../throw-error';
+import getConfig from 'next/config';
+
 
 export async function createCollection(
   tz: TezosToolkit,
   metadata: string,
 ): Promise<string> {
-
+  const { serverRuntimeConfig } = getConfig()
   const ownerAddress = await tz.signer.publicKeyHash();
-  const fullPath = path.join(process.cwd(), 'json', 'fa2_nft_asset.tz')
+  const fullPath = path.join(serverRuntimeConfig.PROJECT_ROOT, 'fa2_nft_asset.tz')
   const code = await readFile(fullPath)
     .catch((e) => {
       console.error(e)
