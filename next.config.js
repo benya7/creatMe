@@ -4,13 +4,4 @@ module.exports = {
   images: {
     domains: ["ipfs.io"]
   },
-  async rewrites() {
-    return [
-      {
-        source: '/uploads',
-        destination: '/uploads',
-      },
-    ]
-  },
-
 }

@@ -42,9 +42,6 @@ let apiRoute = initRoute((error, _, res) => {
 
 })
 
-const UPLOADS_DIR = path.join(process.cwd(), "uploads")
-
-
 apiRoute.post(async (req: ReqExtended, res) => {
 
   let {
@@ -70,7 +67,7 @@ apiRoute.post(async (req: ReqExtended, res) => {
 
   } else {
 
-    let fileJson = await readFile(path.join(UPLOADS_DIR, 'transfers.json'))
+    let fileJson = await readFile(path.join(process.cwd(), 'transfers.json'))
       .catch (() => {
       throw new Error("INCONSISTENT_TRANSFERS_FILE")
     })
