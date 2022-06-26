@@ -11,7 +11,8 @@ export async function createCollection(
 ): Promise<string> {
 
   const ownerAddress = await tz.signer.publicKeyHash();
-  const code = await readFile(path.join(process.cwd(), 'lib/tezos/fa2_nft_asset.tz'))
+  const fullPath = path.join(process.cwd(), 'fa2_nft_asset.tz')
+  const code = await readFile(fullPath)
     .catch((e) => {
       console.error(e)
       throw new Error("FAILED_READ_CONTRACT_FILE");
