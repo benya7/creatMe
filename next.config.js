@@ -4,7 +4,13 @@ module.exports = {
   images: {
     domains: ["ipfs.io"]
   },
-  experimental: {
-    nftTracing: true
-  }
+  async rewrites() {
+    return [
+      {
+        source: '/uploads',
+        destination: '/uploads',
+      },
+    ]
+  },
+
 }
