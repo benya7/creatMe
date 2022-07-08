@@ -46,6 +46,7 @@ TEZOS_RPC_URL=<YOUR_FAVORITE_RPC_URL>
 
 * [next.js](https://nextjs.org/docs/getting-started) - The React Framework
 * [tailwind css](https://tailwindcss.com/docs/installation) - A utility-first CSS framework
+* [Pinata-SDK](https://github.com/PinataCloud/Pinata-SDK) - SDK to interact with the Pinata API, to use the IPFS pinning service.
 * [Taquito](https://tezostaquito.io/docs/quick_start/) - TypeScript library to develop your Tezos blockchain
 * [tezos-tools](https://github.com/oxheadalpha/nft-tutorial) - Tezos FA2 NFT CLI Tool And Tutorial
 
